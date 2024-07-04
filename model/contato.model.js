@@ -6,7 +6,7 @@ const ContatoSchema = new mongoose.Schema({
     email: {type: String, required: true},
     genero: {type: String, required: true},
     linguagem: {type: String, required: true},
-    avatar: {type: String, required: true},
+    avatar: {type: String},
     dataNascimento: {
         type: Date,
         required: true,
