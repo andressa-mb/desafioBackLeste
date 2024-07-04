@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
+require("dotenv/config");
 
 let conn;
+const dbUrl = process.env.DB_KEY;
 
 const connection = () => {
     if(conn){
         return conn;
     }
 
-    conn = mongoose.connect('mongodb://127.0.0.1:27017/dbContato');
+    conn = mongoose.connect(dbUrl);
     console.log("MongoDB on");
 }
 

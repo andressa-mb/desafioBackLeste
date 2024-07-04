@@ -30,20 +30,17 @@ app.post('/contatos', async (req, res) => {
     if(!sobrenome){
         return res.status(400).json({error: "Sobrenome não pode estar vazio."});
     }
-    if(!telefone){
-        return res.status(400).json({error: "Telefone não pode estar vazio."});
-    }
-    if(!dataNascimento){
-        return res.status(400).json({error: "Data de Nascimento não pode estar vazio."});
+    if(!email){
+        return res.status(400).json({error: "E-mail não pode estar vazio."});
     }
     if(!genero){
         return res.status(400).json({error: "Gênero não pode estar vazio."});
     }
-    if(!endereco){
-        return res.status(400).json({error: "Endereço não pode estar vazio."});
+    if(!linguagem){
+        return res.status(400).json({error: "Linguagem não pode estar vazio."});
     }
-    if(!nacionalidade){
-        return res.status(400).json({error: "Nacionalidade não pode estar vazio."});
+    if(!dataNascimento){
+        return res.status(400).json({error: "Data de Nascimento não pode estar vazio."});
     }
 
     try{
