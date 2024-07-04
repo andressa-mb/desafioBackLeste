@@ -1,13 +1,14 @@
 const express = require('express');
 const ContatoModel = require('./model/contato.model');
 const cors = require('cors');
+const corsOptions = require('./config/cors');
 const mongoose = require('./config/mongo');
 
 const app = express();
 mongoose();
 
 app.use(express.json());
-app.use(cors({}));
+app.use(cors(corsOptions));
 
 app.get('/contatos', async (req, res) => {
     console.log("GET");
@@ -82,7 +83,6 @@ app.delete('/contatos/:id', async (req, res) => {
         res.status(500).send(error);
     }
 })
-
 
 app.listen(8080, () => {
     console.log("Servidor funcionando na porta 8080");
