@@ -2,6 +2,7 @@ const express = require('express');
 const ContatoModel = require('./model/contato.model');
 const cors = require('cors');
 const mongoose = require('./config/mongo');
+require("dotenv/config");
 
 const app = express();
 mongoose();
@@ -83,6 +84,7 @@ app.delete('/contatos/:id', async (req, res) => {
     }
 })
 
-app.listen(8080, () => {
-    console.log("Servidor funcionando na porta 8080");
+const PORT = process.env.PORT || 8080;
+app.listen(PORT, () => {
+    console.log(`Servidor funcionando na porta ${PORT}`);
 })
