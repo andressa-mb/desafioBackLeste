@@ -1,14 +1,13 @@
 const express = require('express');
 const ContatoModel = require('./model/contato.model');
 const cors = require('cors');
-const corsOptions = require('./config/cors');
 const mongoose = require('./config/mongo');
 
 const app = express();
 mongoose();
 
 app.use(express.json());
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.get('/contatos', async (req, res) => {
     console.log("GET");
